@@ -34,17 +34,17 @@ function init(tot){
       container.append(quadratino);
       quadratino.append(i + 1);
 
-      if (valoreScelta === "easy") {
+      if (valoreScelta === "1") {
          document.getElementsByClassName('quadratino').style.width = 'calc(100% / 10)';
          document.getElementsByClassName('quadratino').style.height = 'calc(100% / 10)';
       }
       
-      if (valoreScelta === "hard") {
+      if (valoreScelta === "2") {
          document.getElementsByClassName('quadratino').style.width = 'calc(100% / 9)';
          document.getElementsByClassName('quadratino').style.height = 'calc(100% / 9)';
       }
       
-      if (valoreScelta === "crazy") {
+      if (valoreScelta === "3") {
          document.getElementsByClassName('quadratino').style.width = 'calc(100% / 7)';
          document.getElementsByClassName('quadratino').style.height = 'calc(100% / 7)';
       }
@@ -52,3 +52,5 @@ function init(tot){
       return quadratino;
    }
 }
+
+
