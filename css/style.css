@@ -76,13 +76,28 @@ header{
 
 .quadrato{
    float: left;
-   width: calc(100% / 8);
-   height: calc(100% / 8);
+   width: calc(100% / 10);
+   height: calc(100% / 10);
    border: 2px solid white;
    display: flex;
    justify-content: center;
    align-items: center;
 }
+
+/* .easy-size{
+   width: calc(100% / 10);
+   height: calc(100% / 10);
+}
+
+.hard-size{
+   width: calc(100% / 9);
+   height: calc(100% / 9);
+}
+
+.crazy.size{
+   width: calc(100% / 7);
+   height: calc(100% / 7);
+} */
 
 .clicked{
    background-color: rgb(163, 136, 189);
