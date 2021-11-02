@@ -79,4 +79,11 @@ header{
    width: calc(100% / 8);
    height: calc(100% / 8);
    border: 2px solid white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.clicked{
+   background-color: rgb(163, 136, 189);
 }
