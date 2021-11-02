@@ -1,31 +1,37 @@
 
 const container = document.querySelector('.container');
-// const tabella = document.querySelector('.container');
+// const gamespace = document.getElementById('gamespace');
+let valoreScelta = document.getElementsByClassName('play-button').value;
 
-// init(tabella);
 
-// function init(tabella){
+if (valoreScelta === 1) {
+   document.getElementsByClassName('quadrato').style.width = 'calc(100% / 10)';
+   document.getElementsByClassName('quadrato').style.height = 'calc(100% / 10)';
+}
+
+if (valoreScelta === 2) {
+   document.getElementsByClassName('quadrato').style.width = 'calc(100% / 9)';
+   document.getElementsByClassName('quadrato').style.height = 'calc(100% / 9)';
+}
+
+if (valoreScelta === 3) {
+   document.getElementsByClassName('quadrato').style.width = 'calc(100% / 7)';
+   document.getElementsByClassName('quadrato').style.height = 'calc(100% / 7)';
+}
+
+
    
-//    tabella.addEventListener('click',function() {
-//       console.log(this);
-//       this.classList.add('actived');
-//    })
-
-
-
-   
-   for(i = 0; i < 100; i++){
+for(i = 0; i < 100; i++){
       
-      const quadratino = createSquare(container);
+   const quadratino = createSquare(container);
 
-      quadratino.addEventListener('click',function() {
-         console.log(this);
-         this.classList.add('clicked');
-      })
+   quadratino.addEventListener('click',function() {
+   this.classList.add('clicked');
+   })
 
-   }
+}
    
-// }
+
    
 
 
