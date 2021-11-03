@@ -49,22 +49,22 @@ function init(){
          // gli dò anche la classe per cambiare colore una volta cliccato
          quadrato.classList.add('clicked');
 
-         // se non è un bomba continua, altrimenti hai perso!
-         if(!bombe.includes(cliccati)){
-            console.log('continua');
-         } else {
-            alert('Hai perso!');
-         }
+         // // se non è un bomba continua, altrimenti hai perso!
+         // if(!bombe.includes(cliccati)){
+         //    console.log('continua');
+         // } else {
+         //    alert('Hai perso!');
+         // }
 
       }
 
    }
 // numero di bombe create
-   const NUMBOMBE = 16; 
-   const bombe = generaBombe();
+   // const NUMBOMBE = 16; 
+   // const bombe = generaBombe();
 
    // funzione colora bombe
-   colorBombs();
+   // colorBombs();
 // creo i quadrati di ogni numero
    function createSquare() {
       
@@ -94,32 +94,32 @@ function init(){
    }
 
 // funzione che crea 16 bombe a caso
-   function generaBombe(){
-      let bombe = [];
-      console.log('numero di bombe: ', NUMBOMBE);
-      console.log('le bombe sono: ', bombe);
+//    function generaBombe(){
+//       let bombe = [];
+//       console.log('numero di bombe: ', NUMBOMBE);
+//       console.log('le bombe sono: ', bombe);
 
-      while(bombe.length < NUMBOMBE) {
-         const singBomba = generaBombaRandom(1, square);
-         if(!bombe.includes(singBomba)) bombe.push(singBomba);
-      }
+//       while(bombe.length < NUMBOMBE) {
+//          const singBomba = generaBombaRandom(1, square);
+//          if(!bombe.includes(singBomba)) bombe.push(singBomba);
+//       }
        
-      // restituisco l'array con le bombe
-      return bombe;
-   }
+//       // restituisco l'array con le bombe
+//       return bombe;
+//    }
 
-   // funzione colora-bombe
-   function colorBombs(){
-      console.log(arrayQuadrati);
+//    // funzione colora-bombe
+//    function colorBombs(){
+//       console.log(arrayQuadrati);
 
-   }
+//    }
 
 }
 
 
-// funzione per generare una bomba random 1-16
+// // funzione per generare una bomba random 1-16
 
-function generaBombaRandom(min, max){
-   return Math.floor(Math.random() * (max - min +1) + min);
-}
+// function generaBombaRandom(min, max){
+//    return Math.floor(Math.random() * (max - min +1) + min);
+// }
    
