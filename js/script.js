@@ -1,56 +1,65 @@
 
-const container = document.querySelector('.container');
-let valoreScelta = document.getElementsByClassName('play-button').value;
+const game = document.querySelector('.main-wrapper');
+let valoreScelta = parseInt(document.getElementById('livello').value);
 const letsPlay = document.querySelector('#gioca')
 
-
 letsPlay.addEventListener('click',function() {
+   
    init();
 })
 
-function init(tot){
-   for(i = 0; i < 100; i++){
-         
-      const quadratino = createSquare(container);
+function init(){
 
-      quadratino.addEventListener('click',function() {
-      this.classList.add('clicked');
+   let square;
+
+   if (valoreScelta === 1) square = 100;
+   else if (valoreScelta === 2) square = 81;
+   else if (valoreScelta === 3) square = 49;
+
+   console.log(square);
+   game.innerHTML = '';
+   const container = document.createElement('div');
+   container.classList.add('container');
+   game.append(container);
+   console.log(container);
+   
+   for(i = 0; i < square; i++){
+
+      const quadrato = createSquare();
+      // console.log('questo è un quadratino', quadrato);
+      quadrato.addEventListener('click',function() {
+      quadrato.classList.add('clicked');
+      console.log(quadrato);
       })
 
    }
 
-   hideTitle();
+   function createSquare() {
+      
+      const quadrato = document.createElement('div');
+      quadrato.className = 'quadrato';
 
-   function hideTitle() {
-      let titolo = document.getElementById('title');
-      titolo.classList.add('hidden');
+      if (valoreScelta === 1){
+         square = 100;
+         quadrato.style.width = `calc(100% / 10)`;
+         quadrato.style.height = `calc(100% / 10)`;
+      } else if (valoreScelta === 2) {
+         square = 81;
+         quadrato.style.width = `calc(100% / 9)`;
+         quadrato.style.height = `calc(100% / 9)`;
+      } else if (valoreScelta === 3) {
+         square = 49;
+         quadrato.style.width = `calc(100% / 7)`;
+         quadrato.style.height = `calc(100% / 7)`;
+      }
+
+      console.log(valoreScelta);
+      container.append(quadrato);
+      console.log(quadrato);
+      quadrato.append(i + 1);
+
+      return quadrato;
    }
 
 
-   function createSquare(container) {
-      const quadratino = document.createElement('div');
-      quadratino.className = ('quadrato');
-
-      container.append(quadratino);
-      quadratino.append(i + 1);
-
-      if (valoreScelta === "1") {
-         document.getElementsByClassName('quadratino').style.width = 'calc(100% / 10)';
-         document.getElementsByClassName('quadratino').style.height = 'calc(100% / 10)';
-      }
-      
-      if (valoreScelta === "2") {
-         document.getElementsByClassName('quadratino').style.width = 'calc(100% / 9)';
-         document.getElementsByClassName('quadratino').style.height = 'calc(100% / 9)';
-      }
-      
-      if (valoreScelta === "3") {
-         document.getElementsByClassName('quadratino').style.width = 'calc(100% / 7)';
-         document.getElementsByClassName('quadratino').style.height = 'calc(100% / 7)';
-      }
-
-      return quadratino;
-   }
 }
-
-

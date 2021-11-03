@@ -94,7 +94,7 @@ header{
    cursor: pointer;
 }
 
-/* .easy-size{
+.easy-size{
    width: calc(100% / 10);
    height: calc(100% / 10);
 }
@@ -107,7 +107,7 @@ header{
 .crazy.size{
    width: calc(100% / 7);
    height: calc(100% / 7);
-} */
+}
 
 /* footer */
 
