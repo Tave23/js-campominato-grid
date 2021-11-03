@@ -40,21 +40,25 @@ function init(){
       
       // al click faccio partire la funzione "handle..."
       function handleClickCell(event){
-         console.log(event.target.innerText);
+         console.log(parseInt(event.target.innerText));
          
-         // array dei bottoni cliccati + push
-         let cliccati = [];
-         cliccati.push(event.target.innerText);
-         console.log('bottoni cliccati', cliccati);
+         // variabile dei bottoni cliccati 
+         const cliccati = (parseInt(event.target.innerText));
 
          // gli dò anche la classe per cambiare colore una volta cliccato
          quadrato.classList.add('clicked');
 
+         // se non è un bomba continua, altrimenti hai perso!
+         if(!bombe.includes(cliccati)){
+            console.log('continua');
+         } else {
+            alert('Hai perso!');
+         }
+
       }
 
-      
    }
-
+// numero di bombe create
    const NUMBOMBE = 16; 
    const bombe = generaBombe();
 // creo i quadrati di ogni numero
@@ -84,6 +88,7 @@ function init(){
       // restituisco il quadrato
       return quadrato;
    }
+
 // funzione che crea 16 bombe a caso
    function generaBombe(){
       let bombe = [];
@@ -94,8 +99,7 @@ function init(){
          const singBomba = generaBombaRandom(1, square);
          if(!bombe.includes(singBomba)) bombe.push(singBomba);
       }
-
-                  
+       
       // restituisco l'array con le bombe
       return bombe;
    }
