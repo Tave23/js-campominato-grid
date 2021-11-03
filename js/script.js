@@ -24,26 +24,39 @@ function init(){
    else if (valoreScelta === 2) square = 81;
    else if (valoreScelta === 3) square = 49;
 
-   console.log(square);
+   console.log('numero di caselle spawnate: ',square);
    // creo il container e gli ggiungo la classe
    const container = document.createElement('div');
    container.classList.add('container');
    // inserisco tutto nel main-wrapper
    game.append(container);
-   console.log(container);
    
    // inserisco i numeri con il ciclo for
    for(i = 0; i < square; i++){
 
       const quadrato = createSquare();
       // console.log('questo è un quadratino', quadrato);
-      quadrato.addEventListener('click',function() {
-      // gli dò anche la classe per cambiare colore una volta cliccato
-      quadrato.classList.add('clicked');
-      console.log(quadrato);
-      })
+      quadrato.addEventListener('click', handleClickCell);      
+      
+      // al click faccio partire la funzione "handle..."
+      function handleClickCell(event){
+         console.log(event.target.innerText);
+         
+         // array dei bottoni cliccati + push
+         let cliccati = [];
+         cliccati.push(event.target.innerText);
+         console.log('bottoni cliccati', cliccati);
 
+         // gli dò anche la classe per cambiare colore una volta cliccato
+         quadrato.classList.add('clicked');
+
+      }
+
+      
    }
+
+   const NUMBOMBE = 16; 
+   const bombe = generaBombe();
 // creo i quadrati di ogni numero
    function createSquare() {
       
@@ -64,14 +77,36 @@ function init(){
          quadrato.style.height = `calc(100% / 7)`;
       }
 
-      console.log(valoreScelta);
+      console.log('livello scelto: ', valoreScelta);
       container.append(quadrato);
-      console.log(quadrato);
       quadrato.append(i + 1);
 
       // restituisco il quadrato
       return quadrato;
    }
+// funzione che crea 16 bombe a caso
+   function generaBombe(){
+      let bombe = [];
+      console.log('numero di bombe: ', NUMBOMBE);
+      console.log('le bombe sono: ', bombe);
 
+      while(bombe.length < NUMBOMBE) {
+         const singBomba = generaBombaRandom(1, square);
+         if(!bombe.includes(singBomba)) bombe.push(singBomba);
+      }
+
+                  
+      // restituisco l'array con le bombe
+      return bombe;
+   }
 
 }
+
+
+
+// funzione per generare una bomba random 1-16
+
+function generaBombaRandom(min, max){
+   return Math.floor(Math.random() * (max - min +1) + min);
+}
+   
