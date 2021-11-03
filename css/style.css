@@ -18,6 +18,7 @@ header{
    width: 100vw;
    display: flex;
    justify-content: space-around;
+   z-index: 998;
 }
 
 .boolean{
@@ -117,6 +118,7 @@ footer{
    text-align: center;
    margin: 0 auto;
    line-height: 50px;
+   z-index: 999;
 }
 
 .footer-text{
@@ -125,7 +127,8 @@ footer{
 
 /* classi che si aggiungono: */
 .clicked{
-   background-color: rgb(163, 136, 189);
+   background-color: rgb(171, 151, 190);
+   color: black;
 }
 
 .hidden{
