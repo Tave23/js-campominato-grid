@@ -1,6 +1,7 @@
 // constanti 
 const game = document.querySelector('.main-wrapper');
-const letsPlay = document.querySelector('#gioca')
+const letsPlay = document.querySelector('#gioca');
+const arrayQuadrati = document.getElementsByClassName('quadrato')
 
 // evento al click di "letsPlay"
 letsPlay.addEventListener('click',function() {
@@ -61,6 +62,9 @@ function init(){
 // numero di bombe create
    const NUMBOMBE = 16; 
    const bombe = generaBombe();
+
+   // funzione colora bombe
+   colorBombs();
 // creo i quadrati di ogni numero
    function createSquare() {
       
@@ -104,8 +108,13 @@ function init(){
       return bombe;
    }
 
-}
+   // funzione colora-bombe
+   function colorBombs(){
+      console.log(arrayQuadrati);
 
+   }
+
+}
 
 
 // funzione per generare una bomba random 1-16
