@@ -6,11 +6,13 @@ const letsPlay = document.querySelector('#gioca')
 letsPlay.addEventListener('click',function() {
    
    init();
+
+   let square = '';
 })
 
 function init(){
 
-   let square;
+   
 
    if (valoreScelta === 1) square = 100;
    else if (valoreScelta === 2) square = 81;
